@@ -48,4 +48,5 @@ margin_top = 137.0
 margin_right = 92.0
 margin_bottom = 161.0
 
+[connection signal="died" from="Enemy" to="." method="_on_Enemy_died"]
 [connection signal="pressed" from="UI/SwordButton" to="." method="_on_SwordButton_pressed"]
