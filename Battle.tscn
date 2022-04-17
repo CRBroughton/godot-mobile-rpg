@@ -12,11 +12,17 @@ script = ExtResource( 4 )
 [node name="Dungeon" type="Sprite" parent="."]
 position = Vector2( 45, 80 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="MobileRpgMockup" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.196078 )
 position = Vector2( 45, 80 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 46, 33 )
@@ -33,20 +39,34 @@ margin_left = 3.0
 margin_top = 52.0
 margin_right = 87.0
 margin_bottom = 70.0
-
-[node name="SwordButton" type="Button" parent="UI"]
-margin_left = 9.0
-margin_top = 73.0
-margin_right = 41.0
-margin_bottom = 86.0
-theme = ExtResource( 5 )
-text = "SWORD"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TextboxPanel" type="Panel" parent="UI"]
 margin_left = -3.0
 margin_top = 137.0
 margin_right = 92.0
 margin_bottom = 161.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GridContainer" type="GridContainer" parent="UI"]
+margin_left = 9.0
+margin_top = 73.0
+margin_right = 81.0
+margin_bottom = 134.0
+custom_constants/vseparation = 3
+custom_constants/hseparation = 8
+columns = 2
+
+[node name="SwordButton" type="Button" parent="UI/GridContainer"]
+margin_right = 32.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 32, 13 )
+theme = ExtResource( 5 )
+text = "SWORD"
 
 [connection signal="died" from="Enemy" to="." method="_on_Enemy_died"]
-[connection signal="pressed" from="UI/SwordButton" to="." method="_on_SwordButton_pressed"]
+[connection signal="pressed" from="UI/GridContainer/SwordButton" to="." method="_on_SwordButton_pressed"]
