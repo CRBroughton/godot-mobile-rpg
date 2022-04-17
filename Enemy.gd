@@ -15,3 +15,5 @@ func set_hp(new_hp):
 		emit_signal("died")
 		queue_free() # destroys current node
 	animationPlayer.play('Shake')
+	yield(animationPlayer, 'animation_finished') # next line won't run until animation has finished
+	animationPlayer.play("Attack")
