@@ -25,15 +25,21 @@ position = Vector2( 46, 33 )
 texture = ExtResource( 2 )
 
 [node name="HPLabel" type="Label" parent="Enemy"]
-margin_left = -21.0
-margin_top = -28.0
-margin_right = 19.0
-margin_bottom = -14.0
-text = "25 hp"
+margin_left = -20.0
+margin_top = -29.0
+margin_right = 20.0
+margin_bottom = -15.0
+theme = ExtResource( 5 )
+text = "25hp"
+align = 1
+valign = 1
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="SwordButton" type="Button" parent="UI"]
 margin_left = 16.0
