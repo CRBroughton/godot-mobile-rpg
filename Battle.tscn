@@ -43,12 +43,24 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="StatsPanel" type="Panel" parent="UI"]
+margin_left = 3.0
+margin_top = 52.0
+margin_right = 87.0
+margin_bottom = 70.0
+
 [node name="SwordButton" type="Button" parent="UI"]
-margin_left = 16.0
-margin_top = 74.0
-margin_right = 66.0
-margin_bottom = 94.0
+margin_left = 9.0
+margin_top = 73.0
+margin_right = 41.0
+margin_bottom = 86.0
 theme = ExtResource( 5 )
-text = "Sword"
+text = "SWORD"
+
+[node name="TextboxPanel" type="Panel" parent="UI"]
+margin_left = -3.0
+margin_top = 137.0
+margin_right = 92.0
+margin_bottom = 161.0
 
 [connection signal="pressed" from="UI/SwordButton" to="." method="_on_SwordButton_pressed"]
