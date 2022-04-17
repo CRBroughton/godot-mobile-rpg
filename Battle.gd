@@ -1,6 +1,7 @@
 extends Node
 
-onready var enemy = $Enemy
-
 func _on_SwordButton_pressed():
-	enemy.hp -= 4
+	var enemy = find_node('Enemy')
+	
+	if enemy != null: 
+		enemy.hp -= 4

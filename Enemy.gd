@@ -9,4 +9,6 @@ func set_hp(new_hp):
 	hp = new_hp
 	hpLabel.text = str(hp)+'hp'
 	
+	if hp <= 0:
+		queue_free() # destroys current node
 	animationPlayer.play('Shake')
