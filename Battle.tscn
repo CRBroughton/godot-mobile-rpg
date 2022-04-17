@@ -1,3 +1,9 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Images/Mobile RPG Mockup.png" type="Texture" id=1]
 
 [node name="Battle" type="Node"]
+
+[node name="MobileRpgMockup" type="Sprite" parent="."]
+position = Vector2( 45, 80 )
+texture = ExtResource( 1 )
