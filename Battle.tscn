@@ -40,3 +40,5 @@ margin_top = 74.0
 margin_right = 66.0
 margin_bottom = 94.0
 text = "Sword"
+
+[connection signal="pressed" from="UI/SwordButton" to="." method="_on_SwordButton_pressed"]
