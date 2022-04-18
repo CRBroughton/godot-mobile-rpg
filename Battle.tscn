@@ -43,9 +43,47 @@ margin_left = 3.0
 margin_top = 52.0
 margin_right = 87.0
 margin_bottom = 70.0
-__meta__ = {
-"_edit_lock_": true
-}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/StatsPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HP" type="Label" parent="UI/StatsPanel/HBoxContainer"]
+margin_right = 25.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme = ExtResource( 5 )
+text = "HP
+25"
+align = 1
+valign = 1
+
+[node name="AP" type="Label" parent="UI/StatsPanel/HBoxContainer"]
+margin_left = 29.0
+margin_right = 54.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme = ExtResource( 5 )
+text = "AP
+3"
+align = 1
+valign = 1
+
+[node name="MP" type="Label" parent="UI/StatsPanel/HBoxContainer"]
+margin_left = 58.0
+margin_right = 84.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme = ExtResource( 5 )
+text = "MP
+10"
+align = 1
+valign = 1
 
 [node name="TextboxPanel" type="Panel" parent="UI"]
 margin_left = -3.0
