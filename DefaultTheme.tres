@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=7 format=2]
+
+[ext_resource path="res://DefaultFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Button9SliceHover.tres" type="StyleBox" id=2]
+[ext_resource path="res://Button9SlicePressed.tres" type="StyleBox" id=3]
+[ext_resource path="res://Panel9Slice.tres" type="StyleBox" id=4]
+[ext_resource path="res://Button9Slice.tres" type="StyleBox" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[resource]
+default_font = ExtResource( 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+Button/styles/focus = SubResource( 1 )
+Button/styles/hover = ExtResource( 2 )
+Button/styles/normal = ExtResource( 5 )
+Button/styles/pressed = ExtResource( 3 )
+LineEdit/styles/normal = ExtResource( 4 )
+OptionButton/styles/normal = ExtResource( 4 )
+Panel/styles/panel = ExtResource( 4 )
+TextEdit/styles/normal = ExtResource( 4 )
