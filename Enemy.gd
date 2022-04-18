@@ -19,7 +19,8 @@ func _exit_tree():
 
 func set_hp(new_hp):
 	hp = new_hp
-	hpLabel.text = str(hp)+'hp'
+	if hpLabel != null:
+		hpLabel.text = str(hp)+'hp'
 	
 func attack() -> void:
 	yield(get_tree().create_timer(0.4), 'timeout') # gets base root node for current scene, waits for a set period of time
