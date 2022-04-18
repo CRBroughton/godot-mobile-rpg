@@ -20,12 +20,6 @@ func start_player_turn():
 	yield(playerStats, 'end_turn')
 	start_enemy_turn()
 
-func _on_SwordButton_pressed():
-	if enemy != null: 
-		enemy.take_damage(4)
-		playerStats.ap -= 1
-
-
 func _on_Enemy_died():
 	battleActionButtons.hide()
 	enemy = null
