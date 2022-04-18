@@ -18,6 +18,9 @@ func attack(target) -> void:
 	yield(animationPlayer, 'animation_finished')
 	target.hp -= 3
 	emit_signal("end_turn")
+	
+func deal_damage():
+	print('deal dmg')
 
 func take_damage(amount):
 	self.hp -= amount
