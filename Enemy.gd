@@ -3,7 +3,7 @@ extends Node2D
 const BattleUnits = preload('res://BattleUnits.tres')
 
 export(int) var hp = 25 setget set_hp
-export(int) var attack = 3
+export(int) var damage = 4
 
 onready var hpLabel = $HPLabel
 onready var animationPlayer = $AnimationPlayer
