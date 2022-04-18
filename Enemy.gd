@@ -6,21 +6,26 @@ onready var hpLabel = $HPLabel
 onready var animationPlayer = $AnimationPlayer
 
 signal died
+signal end_turn
 
 func set_hp(new_hp):
 	hp = new_hp
 	hpLabel.text = str(hp)+'hp'
 	
-	if hp <= 0:
-		emit_signal("died")
-		queue_free() # destroys current node
-		
-	animationPlayer.play('Shake')
-	yield(animationPlayer, 'animation_finished') # next line won't run until animation has finished
+func attack(target) -> void:
+	yield(get_tree().create_timer(0.4), 'timeout') # gets base root node for current scene, waits for a set period of time
 	animationPlayer.play("Attack")
 	yield(animationPlayer, 'animation_finished')
+	target.hp -= 3
+	emit_signal("end_turn")
+
+func take_damage(amount):
+	self.hp -= amount
+	if is_dead():
+		emit_signal("died")
+		queue_free() # destroys current node
+	else:
+		animationPlayer.play("Shake")
 	
-	var battle = get_tree().current_scene # gets base root node for current scene
-	var player = battle.find_node('PlayerStats')
-	
-	player.hp -= 3
+func is_dead():
+	return hp <= 0
