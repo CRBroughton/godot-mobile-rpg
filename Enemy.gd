@@ -18,3 +18,9 @@ func set_hp(new_hp):
 	animationPlayer.play('Shake')
 	yield(animationPlayer, 'animation_finished') # next line won't run until animation has finished
 	animationPlayer.play("Attack")
+	yield(animationPlayer, 'animation_finished')
+	
+	var battle = get_tree().current_scene # gets base root node for current scene
+	var player = battle.find_node('PlayerStats')
+	
+	player.hp -= 3
