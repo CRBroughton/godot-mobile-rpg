@@ -1,5 +1,7 @@
 extends Node
 
+const BattleUnits = preload('res://BattleUnits.tres')
+
 var max_hp: int = 25
 var hp = max_hp setget set_hp
 var max_ap: int = 3
@@ -12,6 +14,12 @@ signal mp_changed(value)
 signal ap_changed(value)
 
 signal end_turn
+
+func _ready():
+	BattleUnits.PlayerStats = self # says 'Player is now accessible to the BattleUnits'
+
+func _exit_tree():
+	BattleUnits.PlayerStats = null # Player is removed from BattleUnits
 
 func set_hp(value: int) -> void:
 	hp = clamp(value, 0, max_hp) # ensures hp doesn't exceed max_hp, or below 0
@@ -27,3 +35,4 @@ func set_ap(value: int) -> void:
 func set_mp(value: int) -> void:
 	mp = clamp(value, 0, max_mp)
 	emit_signal("mp_changed", mp)
+
