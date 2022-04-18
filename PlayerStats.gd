@@ -7,13 +7,17 @@ var ap = max_ap setget set_ap
 var max_mp: int = 10
 var mp = max_mp setget set_mp
 
+signal hp_changed(value)
+signal mp_changed(value)
+signal ap_changed(value)
+
 signal end_turn
 
 func set_hp(value: int) -> void:
-	hp = value
+	hp = min(value, max_hp) # ensures hp doesn't exceed max_hp
 	
 func set_ap(value: int) -> void:
-	ap = value
+	ap = min(value, max_ap)
 	
 func set_mp(value: int) -> void:
-	mp = value
+	mp = min(value, max_mp)
