@@ -15,9 +15,12 @@ signal end_turn
 
 func set_hp(value: int) -> void:
 	hp = min(value, max_hp) # ensures hp doesn't exceed max_hp
+	emit_signal("hp_changed", hp)
 	
 func set_ap(value: int) -> void:
 	ap = min(value, max_ap)
+	emit_signal("ap_changed", ap)
 	
 func set_mp(value: int) -> void:
 	mp = min(value, max_mp)
+	emit_signal("mp_changed", mp)
