@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Images/Mobile RPG Mockup.png" type="Texture" id=1]
 [ext_resource path="res://Slime.tscn" type="PackedScene" id=2]
@@ -9,6 +9,38 @@
 [ext_resource path="res://StatsPanel.gd" type="Script" id=7]
 [ext_resource path="res://SwordActionButton.tscn" type="PackedScene" id=8]
 [ext_resource path="res://HealActionButton.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "FadeToNewRoom"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fade:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="Battle" type="Node"]
 script = ExtResource( 4 )
@@ -137,6 +169,8 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeToNewRoom = SubResource( 1 )
+anims/RESET = SubResource( 2 )
 
 [connection signal="ap_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_ap_changed"]
 [connection signal="hp_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_hp_changed"]
