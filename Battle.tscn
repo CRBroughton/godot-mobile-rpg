@@ -110,8 +110,20 @@ anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="LVL" type="Label" parent="UI/StatsPanel/StatsContainer"]
+margin_right = 18.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme = ExtResource( 5 )
+text = "LVL
+1"
+align = 1
+valign = 1
+
 [node name="HP" type="Label" parent="UI/StatsPanel/StatsContainer"]
-margin_right = 25.0
+margin_left = 22.0
+margin_right = 40.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
@@ -122,8 +134,8 @@ align = 1
 valign = 1
 
 [node name="AP" type="Label" parent="UI/StatsPanel/StatsContainer"]
-margin_left = 29.0
-margin_right = 54.0
+margin_left = 44.0
+margin_right = 62.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
@@ -134,7 +146,7 @@ align = 1
 valign = 1
 
 [node name="MP" type="Label" parent="UI/StatsPanel/StatsContainer"]
-margin_left = 58.0
+margin_left = 66.0
 margin_right = 84.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
@@ -194,5 +206,6 @@ anims/RESET = SubResource( 2 )
 
 [connection signal="ap_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_ap_changed"]
 [connection signal="hp_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_hp_changed"]
+[connection signal="lvl_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_lvl_changed"]
 [connection signal="mp_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_mp_changed"]
 [connection signal="pressed" from="UI/CenterContainer/NextRoomButton" to="." method="_on_NextRoomButton_pressed"]
