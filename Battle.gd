@@ -2,6 +2,8 @@ extends Node
 
 const BattleUnits = preload('res://BattleUnits.tres')
 
+export(Array, PackedScene) var enemies = []
+
 onready var battleActionButtons = $UI/BattleActionButtons
 onready var animationPlayer = $AnimationPlayer
 onready var nextRoomButton = $UI/CenterContainer/NextRoomButton
