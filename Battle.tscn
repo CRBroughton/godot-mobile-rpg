@@ -74,6 +74,7 @@ __meta__ = {
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 theme = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
@@ -82,6 +83,7 @@ __meta__ = {
 [node name="CenterContainer" type="CenterContainer" parent="UI"]
 margin_right = 90.0
 margin_bottom = 52.0
+mouse_filter = 2
 
 [node name="NextRoomButton" type="Button" parent="UI/CenterContainer"]
 visible = false
@@ -90,6 +92,7 @@ margin_top = 19.0
 margin_right = 80.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 70, 13 )
+mouse_filter = 1
 text = "NEXT ROOM"
 
 [node name="StatsPanel" type="Panel" parent="UI"]
