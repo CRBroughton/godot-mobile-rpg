@@ -3,9 +3,15 @@ extends Node
 const BattleUnits = preload('res://BattleUnits.tres')
 
 onready var battleActionButtons = $UI/BattleActionButtons
+onready var animationPlayer = $AnimationPlayer
+onready var nextRoomButton = $UI/CenterContainer/NextRoomButton
 
 func _ready():
 	start_player_turn()
+	var enemy = BattleUnits.Enemy
+	
+	if enemy != null:
+		enemy.connect('died', self, '_on_Enemy_died')
 
 func start_enemy_turn():
 	battleActionButtons.hide()
@@ -21,7 +27,17 @@ func start_player_turn():
 	playerStats.ap = playerStats.max_ap
 	yield(playerStats, 'end_turn')
 	start_enemy_turn()
+	
+func create_new_enemy():
+	print('create enemy')
 
+func _on_Enemy_died():
+	nextRoomButton.show()
+	battleActionButtons.hide()
 
 func _on_NextRoomButton_pressed():
+	nextRoomButton.hide()
+	animationPlayer.play("FadeToNewRoom")
+	yield(animationPlayer, 'animation_finished')
 	battleActionButtons.show()
+	create_new_enemy()
