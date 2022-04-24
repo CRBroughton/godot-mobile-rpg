@@ -12,5 +12,6 @@ theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="HoverInfo" parent="." instance=ExtResource( 3 )]
+mouse_filter = 1
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
