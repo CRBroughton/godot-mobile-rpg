@@ -21,3 +21,7 @@ func start_player_turn():
 	playerStats.ap = playerStats.max_ap
 	yield(playerStats, 'end_turn')
 	start_enemy_turn()
+
+
+func _on_NextRoomButton_pressed():
+	battleActionButtons.show()
