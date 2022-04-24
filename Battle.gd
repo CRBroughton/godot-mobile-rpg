@@ -41,6 +41,8 @@ func create_new_enemy():
 	
 func _on_Enemy_died():
 	nextRoomButton.show()
+	var playerStats = BattleUnits.PlayerStats
+	playerStats.advance_lvl()
 	battleActionButtons.hide()
 
 func _on_NextRoomButton_pressed():
